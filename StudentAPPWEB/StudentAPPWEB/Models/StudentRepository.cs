@@ -38,12 +38,45 @@ namespace StudentAPPWEB.Models
                    Email="safarovf@gmail.com",
                    Univercity="UzMU"
 
+               },
+               new Student()
+               {
+                   Id=4,
+                   FirstName="Salim",
+                   LastName="Egamov",
+                   Email="segamov@gmail.com",
+                   Univercity="UzMU"
+
+               },
+               new Student()
+               {
+                   Id=5,
+                   FirstName="Diyor",
+                   LastName="Choriyev",
+                   Email="diyorf@gmail.com",
+                   Univercity="TUIT"
+
+               },
+               new Student()
+               {
+                   Id=6,
+                   FirstName="Doston",
+                   LastName="Husanov",
+                   Email="Hdoston@gmail.com",
+                   Univercity="TATU"
+
                }
            };
         }
         public Student Get(int id)
         {
             return _students.FirstOrDefault(Student => Student.Id.Equals(id));
+        }
+
+        public Student getUniverStudent(string univer)
+        {
+            return _students.FirstOrDefault(x => x.Univercity.Equals(univer));
+            
         }
     }
 }
