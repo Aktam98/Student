@@ -9,6 +9,7 @@ namespace StudentAPPWEB.Models
     {
         Student Get(int id);
        IEnumerable<Student> getUniverStudent(string univer);
+        void AddStudent(Student student);
     }
         
 }

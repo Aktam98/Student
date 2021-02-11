@@ -68,6 +68,12 @@ namespace StudentAPPWEB.Models
                }
            };
         }
+
+        public void AddStudent(Student student)
+        {
+            _students.Add(student);
+        }
+
         public Student Get(int id)
         {
             return _students.FirstOrDefault(Student => Student.Id.Equals(id));
