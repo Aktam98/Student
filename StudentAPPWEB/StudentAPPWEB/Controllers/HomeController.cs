@@ -30,9 +30,9 @@ namespace StudentAPPWEB.Controllers
         {
             return _studentRepository.Get(3)?.FirstName;
         }
-        public ViewResult UniverStudent()
+        public ActionResult UniverStudent()
         {
-            var Student = _studentRepository.getUniverStudent("UzMU");
+            var Student = _studentRepository.getUniverStudent("TATU");
             ViewData["univerStudent"] = Student;
             return View();
         }

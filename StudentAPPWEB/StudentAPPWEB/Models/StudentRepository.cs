@@ -73,9 +73,12 @@ namespace StudentAPPWEB.Models
             return _students.FirstOrDefault(Student => Student.Id.Equals(id));
         }
 
-        public Student getUniverStudent(string univer)
+        public IEnumerable<Student> getUniverStudent(string univer)
         {
-            return _students.FirstOrDefault(x => x.Univercity.Equals(univer));
+            var result = from s in _students
+                         where s.Univercity.Equals(univer)
+                         select s;
+            return (IEnumerable<Student>)result;
             
         }
     }
