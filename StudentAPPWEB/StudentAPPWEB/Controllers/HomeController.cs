@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StudentAPPWEB.Models;
+using StudentAPPWEB.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,14 +18,22 @@ namespace StudentAPPWEB.Controllers
         }
         public ViewResult Index()
         {
-            return View() ;
+            HomeIndexViewModel viewModel = new HomeIndexViewModel()
+            {
+                Index = _studentRepository.GetAll()
+            };
+            return View(viewModel) ;
         }
         public ViewResult Details()
         {
-            var Student = _studentRepository.Get(3);
-            ViewData["student"] = Student;
-            ViewData["title"] = "Title Student";
-            return View();
+
+
+            HomeDetailsViewModel viewModel = new HomeDetailsViewModel()
+            {
+                Student = _studentRepository.Get(3),
+                Title = "Title Student"
+            };
+            return View(viewModel);
         }
         public string Student()
         {
@@ -32,9 +41,8 @@ namespace StudentAPPWEB.Controllers
         }
         public ActionResult UniverStudent()
         {
-            var Student = _studentRepository.getUniverStudent("TATU");
-            ViewData["univerStudent"] = Student;
-            return View();
+            var Student = _studentRepository.getUniverStudent("UzMU");
+            return View(Student);
         }
         public string My()
         {

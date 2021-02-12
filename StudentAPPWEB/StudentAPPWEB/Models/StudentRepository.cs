@@ -87,5 +87,9 @@ namespace StudentAPPWEB.Models
             return (IEnumerable<Student>)result;
             
         }
+        public IEnumerable<Student> GetAll()
+        {
+            return _students;
+        }
     }
 }

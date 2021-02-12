@@ -8,8 +8,8 @@ namespace StudentAPPWEB.Models
     public interface IStudentRepository
     {
         Student Get(int id);
-       IEnumerable<Student> getUniverStudent(string univer);
-        void AddStudent(Student student);
+        IEnumerable<Student> getUniverStudent(string univer);
+        IEnumerable<Student> GetAll();
     }
         
 }

@@ -1,19 +1,18 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿@model StudentAPPWEB.ViewModels.HomeDetailsViewModel
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head><title></title></head>
     <body>
-        <h1>@ViewData["title"]</h1>
+        <h1>@Model.Title</h1>
 
-        @{ 
-            var Student = ViewData["student"] as StudentAPPWEB.Models.Student;
-        }
+        
         <div>
-            Name: @Student.LastName @Student.FirstName
+            Name: @Model.Student.LastName @Model.Student.FirstName
         </div>
         <div>
-            Email: @Student.Email
+            Email: @Model.Student.Email
         </div>
         <div>
-            Univercity: @Student.Univercity
+            Univercity: @Model.Student.Univercity
         </div>
     </body>
 </html>
