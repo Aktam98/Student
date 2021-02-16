@@ -1,0 +1,46 @@
+﻿@model IEnumerable<StudentAPPWEB.Models.Employee>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewData["Title"] = "Index Employee";
+}
+<table style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Position
+            </th>
+            <th>
+                Mobile
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @item.LastName @item.FirstName
+                </td>
+                <td>
+                    @item.Position
+                </td>
+                <td>
+                    @item.Mobile
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>

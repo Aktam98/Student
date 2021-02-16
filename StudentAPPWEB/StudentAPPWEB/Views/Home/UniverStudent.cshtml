@@ -1,20 +1,25 @@
 ﻿@model IEnumerable<StudentAPPWEB.Models.Student>
 
-
+@{
+Layout="~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewData["Title"] = "Univer Student";
+}
 <h1>UniverStudent</h1>
 
 
 @foreach (var item in Model)
 {
-    <div>
-        Name: @item.LastName @item.FirstName
-    </div>
-    <div>
-        Email: @item.Email
-    </div>
-    <div>
-       Univercity: @item.Univercity
-    </div>
-    <h1>________________________________________________</h1>
+<div>
+    Name: @item.LastName @item.FirstName
+</div>
+<div>
+    Email: @item.Email
+</div>
+<div>
+    Univercity: @item.Univercity
+</div>
+<hr />
 }
 

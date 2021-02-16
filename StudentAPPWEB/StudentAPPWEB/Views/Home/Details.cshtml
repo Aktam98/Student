@@ -1,18 +1,20 @@
 ﻿@model StudentAPPWEB.ViewModels.HomeDetailsViewModel
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head><title></title></head>
-    <body>
-        <h1>@Model.Title</h1>
+@{
+Layout="~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewData["Title"] = "Student Details";
+}
+<h1>@Model.Title</h1>
 
-        
-        <div>
-            Name: @Model.Student.LastName @Model.Student.FirstName
-        </div>
-        <div>
-            Email: @Model.Student.Email
-        </div>
-        <div>
-            Univercity: @Model.Student.Univercity
-        </div>
-    </body>
-</html>
+
+<div>
+    Name: @Model.Student.LastName @Model.Student.FirstName
+</div>
+<div>
+    Email: @Model.Student.Email
+</div>
+<div>
+    Univercity: @Model.Student.Univercity
+</div>
+

@@ -1,45 +1,46 @@
-﻿@model  StudentAPPWEB.ViewModels.HomeIndexViewModel
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head><title></title></head>
-    <body>
-        <table>
-            <thead>
-                <tr>
-                    <th>
-                        ID
-                    </th>
-                    <th>
-                        Name
-                    </th>
-                    <th>
-                        Email
-                    </th>
-                    <th>
-                        Univercity
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Index)
+﻿@model StudentAPPWEB.ViewModels.HomeIndexViewModel
+@{
+Layout="~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewData["Title"] = "Index Student";
+}
+<table>
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Univercity
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Index)
                 {
-                <tr>
-                    <td>
-                        @item.Id
-                    </td>
-                    <td>
-                        @item.LastName @item.FirstName
-                    </td>
-                    <td>
-                        @item.Email
-                    </td>
-                    <td>
-                        @item.Univercity
-                    </td>
-                </tr>
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @item.LastName @item.FirstName
+            </td>
+            <td>
+                @item.Email
+            </td>
+            <td>
+                @item.Univercity
+            </td>
+        </tr>
                 }
-                
-            </tbody>
-            
-        </table>
-    </body>
-</html>
+
+    </tbody>
+
+</table>

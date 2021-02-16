@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using StudentAPPWEB.Models;
@@ -18,7 +19,9 @@ namespace StudentAPPWEB
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc(options=>options.EnableEndpointRouting=false);
+            services.AddDbContext<EmployeeContext>(options => options.UseInMemoryDatabase(databaseName: "Employee"));
             services.AddScoped<IStudentRepository, StudentRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

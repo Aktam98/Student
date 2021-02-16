@@ -1,0 +1,30 @@
+﻿@model StudentAPPWEB.Models.Employee
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{ 
+    ViewData["Title"] = "Create Employee";
+}
+@using (Html.BeginForm())
+{
+    <p>Last Name</p>
+    @Html.TextBoxFor(model => model.LastName)
+    @Html.ValidationMessageFor(model => model.LastName)
+    
+    <p>Firs Name</p>
+    @Html.TextBoxFor(model => model.FirstName)
+    @Html.ValidationMessageFor(model => model.FirstName)
+    
+    <p>Position</p>
+    @Html.TextBoxFor(model => model.Position)
+    @Html.ValidationMessageFor(model => model.Position)
+    
+    <p>Mobile</p>
+    @Html.TextBoxFor(model => model.Mobile)
+    @Html.ValidationMessageFor(model => model.Mobile)
+
+
+    <br>
+    <button href="/employee/index" type="submit">Add</button>
+}
+
